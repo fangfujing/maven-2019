@@ -33,7 +33,7 @@ public class MybatisTest {
 
        // Map<String, String> stringStringMap = mapper.selectMenuByMenuId("1234");
 //        System.out.println(stringStringMap);
-        List<Map<String, String>> objects = sqlSession.selectList("mybaits.mapper.MenuDao.selectMenuByMenuId", "1234");
+        Map<String, String> objects = sqlSession.selectOne("mybaits.mapper.MenuDao.selectMenuByMenuId", "1234");
         System.out.println(JSON.toJSON(objects));
         sqlSession.close();
 
