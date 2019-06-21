@@ -4,7 +4,7 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.Map;
 
-public interface MenuDao {
+public interface MenuMapper {
 
     Map selectMenuByMenuId(String id);
 
