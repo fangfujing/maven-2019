@@ -2,13 +2,13 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="mybaits.mapper.MenuMapper">
+<mapper namespace="mybaits.dao.MenuMapper">
 
     <select id="selectMenuByMenuId" parameterType="string" resultType="hashmap">
         select * from menu where id = #{id}
     </select>
 
-    <insert id="insertMenu" parameterType="hashmap">
+    <insert id="insertMenu" parameterType="hashmap" statementType="STATEMENT">
         insert into menu (id,parent_id, name, depth) values (#{map.id},#{map.parent_id} , #{map.name} , #{map.depth})
     </insert>
 </mapper>

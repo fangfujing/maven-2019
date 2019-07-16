@@ -18,21 +18,12 @@ public class ProxyMain {
 //
 //        System.out.println(proxy.getClass());
 //        proxy.say();
+        Subject subject = new SubjectRel();
 
+        Subject o = (Subject) Proxy.newProxyInstance(Subject.class.getClassLoader(), Subject.class.getInterfaces(), new LogHandler(subject));
 
-        Class[] cs = {Subject.class};
-        Subject subjectProxy = (Subject)Proxy.newProxyInstance(Subject.class.getClassLoader(), cs,
-                new InvocationHandler() {
-                    @Override
-                    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                        System.out.println("代理执行");
-                        System.out.println(method.getName());
-                        return null;
-                    }
-                });
+        System.out.println(o.say(2));
 
-        System.out.println(subjectProxy.getClass());
-        subjectProxy.say();
 
     }
 }

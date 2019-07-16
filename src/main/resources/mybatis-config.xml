@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+
+    <plugins>
+        <!-- interceptor: 拦截器的类路径 -->
+        <plugin interceptor="mybaits.interceptor.MyFirstPlugin">
+            <property name="username" value="zhangsan"/>
+        </plugin>
+    </plugins>
+
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC" />
@@ -14,6 +22,6 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="mapper/menu.xml"></mapper>
+        <mapper resource="mapper/menuMapper.xml"></mapper>
     </mappers>
 </configuration>

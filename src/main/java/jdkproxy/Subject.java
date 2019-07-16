@@ -2,6 +2,6 @@ package jdkproxy;
 
 public interface Subject {
 
-    public void say();
+    public Object say(int i);
 
 }

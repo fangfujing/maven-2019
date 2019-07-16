@@ -27,12 +27,16 @@ public class JDBCTest {
 //            ps.setString(1, null);
 //            System.out.println(ps.executeUpdate());
 
-            String sql = "insert into emp (emp_no, create_time) values (?,?)";
+            connection.setAutoCommit(false);
+            String sql = "insert into menu (id,parent_id, name, depth) values (?,?,?,?)";
             ps = connection.prepareStatement(sql);
-            ps.setInt(1, 4);
-            Date date = new Date(System.currentTimeMillis());
-            Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-            ps.setTimestamp(2, timestamp);
+            ps.setString(1, "324");
+            ps.setString(2, "2323");
+            ps.setString(3, "ffjj");
+            ps.setInt(4, 10);
+//            Date date = new Date(System.currentTimeMillis());
+//            Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+//            ps.setTimestamp(2, timestamp);
             System.out.println(ps.executeUpdate());
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
