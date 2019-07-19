@@ -3,3 +3,8 @@ category
 statement
 forks
 capacity
+unnecessary
+redundant
+procedure
+purpose
+reconfiguration

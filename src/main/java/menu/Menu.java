@@ -17,6 +17,16 @@ public class Menu {
     //是否选中
     private boolean selected;
 
+    public Menu(Long id, Long parentId, String name, String url, String icon, boolean selected, List<Menu> childrens) {
+        this.id = id;
+        this.parentId = parentId;
+        this.name = name;
+        this.url = url;
+        this.icon = icon;
+        this.selected = selected;
+        this.childrens = childrens;
+    }
+
     private List<Menu> childrens;
 
     public Long getId() {
@@ -155,31 +165,31 @@ public class Menu {
         public static void main(String[] args) {
             List<Menu> sourceList=new ArrayList<>();
 
-            Menu menu=new Menu();
+            Menu menu= new menuBuilder().createMenu();
             menu.setParentId(0l);
             menu.setId(1l);
             menu.setName("菜单一级");
             sourceList.add(menu);
 
-            Menu menu2=new Menu();
+            Menu menu2= new menuBuilder().createMenu();
             menu2.setParentId(1l);
             menu2.setId(2l);
             menu2.setName("菜单二级1");
             sourceList.add(menu2);
 
-            Menu menu3=new Menu();
+            Menu menu3= new menuBuilder().createMenu();
             menu3.setParentId(2l);
             menu3.setId(3l);
             menu3.setName("菜单三级");
             sourceList.add(menu3);
 
-            Menu menu4=new Menu();
+            Menu menu4= new menuBuilder().createMenu();
             menu4.setParentId(3l);
             menu4.setId(4l);
             menu4.setName("菜单四级");
             sourceList.add(menu4);
 
-            Menu menu5=new Menu();
+            Menu menu5= new menuBuilder().createMenu();
             menu5.setParentId(1l);
             menu5.setId(6l);
             menu5.setName("菜单二级2");
