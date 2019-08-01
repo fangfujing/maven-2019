@@ -8,3 +8,5 @@ redundant
 procedure
 purpose
 reconfiguration
+optimize
+verification

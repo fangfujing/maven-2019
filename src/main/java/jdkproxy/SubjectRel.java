@@ -24,4 +24,8 @@ public class SubjectRel implements Subject {
     }
 
 
+    @Override
+    public void test(){
+
+    }
 }
