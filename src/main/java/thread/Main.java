@@ -72,23 +72,23 @@ public class Main {
 //                System.out.println("end");
 //            }
 //        });
-        Future<String> future = exec.submit(new Callable<String>() {
-            @Override
-            public String call() throws Exception {
-                System.out.println("begin");
-                try {
-                    Thread.sleep(5000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                System.out.println("end");
-                return "myCallable return";
-            }
-        });
-        System.out.println("other things");
-//        System.out.println(future.get()+"------------------------");
-        System.out.println("*****************");
-        exec.shutdown();
+//        Future<String> future = exec.submit(new Callable<String>() {
+//            @Override
+//            public String call() throws Exception {
+//                System.out.println("begin");
+//                try {
+//                    Thread.sleep(5000);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//                System.out.println("end");
+//                return "myCallable return";
+//            }
+//        });
+//        System.out.println("other things");
+////        System.out.println(future.get()+"------------------------");
+//        System.out.println("*****************");
+//        exec.shutdown();
 //        new Thread(new Runnable() {
 //            @Override
 //            public void run() {
@@ -103,5 +103,22 @@ public class Main {
 //        }).start();
 
 //        System.out.println("------");
+
+
+        System.out.println("------------------");
+        try {
+            Thread.sleep(5000);
+            if (1 == 1) {
+                throw new RuntimeException("my exception");
+            }
+        } catch (InterruptedException e) {
+//            e.printStackTrace();
+            return;
+        }finally {
+            System.out.println("finally()...");
+        }
+
+        System.out.println("end");
+
     }
 }
