@@ -1,9 +1,5 @@
 package jdkproxy;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
-
 public class ProxyMain {
 
     public static void main(String[] args) {
@@ -18,12 +14,19 @@ public class ProxyMain {
 //
 //        System.out.println(proxy.getClass());
 //        proxy.say();
+//        Subject subject = new SubjectRel();
+//
+//        Subject o = (Subject) Proxy.newProxyInstance(Subject.class.getClassLoader(), Subject.class.getInterfaces(), new LogHandler(subject));
+//
+//        System.out.println(o.say(2));
+
+
         Subject subject = new SubjectRel();
 
-        Subject o = (Subject) Proxy.newProxyInstance(Subject.class.getClassLoader(), Subject.class.getInterfaces(), new LogHandler(subject));
+        LogHandler logHandler = new LogHandler(subject);
 
-        System.out.println(o.say(2));
+        Subject proxy = logHandler.getProxy();
 
-
+        proxy.test();
     }
 }

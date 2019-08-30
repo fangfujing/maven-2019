@@ -2,6 +2,7 @@ package jdkproxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 
 public class LogHandler implements InvocationHandler {
 
@@ -15,10 +16,16 @@ public class LogHandler implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         long l = System.currentTimeMillis();
 
-        Object invoke = method.invoke(target, args);
+        Object result = method.invoke(target, args);
 
-        System.out.println(System.currentTimeMillis() - l);
+        System.out.println("耗时:"+(System.currentTimeMillis() - l));
 
-        return invoke;
+        return result;
+    }
+
+    public Subject getProxy(){
+
+        return (Subject) Proxy.newProxyInstance(target.getClass().getClassLoader(),
+                target.getClass().getInterfaces(), this::invoke);
     }
 }

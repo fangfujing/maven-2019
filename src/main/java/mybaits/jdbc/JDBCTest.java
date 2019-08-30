@@ -7,6 +7,45 @@ import java.sql.*;
 public class JDBCTest {
 
     public static void main(String[] args) {
+        //oracleTest();
+        Connection connection = null;
+        PreparedStatement ps = null;
+
+        //连接
+        try {
+
+            Class.forName("com.mysql.jdbc.Driver");
+
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/fang", "root", "123");
+
+            connection.setAutoCommit(false);
+            ps = connection.prepareStatement("insert into ims_test (id, name) values (?, ?)");
+
+            ps.setInt(1, 4);
+            ps.setString(2, "admin4");
+
+            boolean execute = ps.execute();
+            System.out.println(execute);
+            System.out.println(connection);
+            connection.commit();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }finally {
+            if(connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
+    }
+
+    private static void oracleTest() {
         Connection connection = null;
         PreparedStatement ps = null;
         try {
@@ -59,6 +98,5 @@ public class JDBCTest {
                 }
             }
         }
-
     }
 }

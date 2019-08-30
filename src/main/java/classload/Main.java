@@ -36,5 +36,17 @@ public class Main {
 //        SingleTon.count2 = 3;
 //        System.out.println(SingleTon.count2);
 
+
+
+//        ClassLoader classLoader = Stu.class.getClassLoader();
+//
+//        while (classLoader != null) {
+//            System.out.println(classLoader);
+//            classLoader = classLoader.getParent();
+//        }
+
+        Stu stu = new Stu();
+        stu.add();
+
     }
 }

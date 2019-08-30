@@ -4,6 +4,11 @@ public class Stu {
 
     public static int i;
 
+    protected void add() {
+
+        System.out.println("add()...");
+    };
+
     static {
         System.out.println("static()...");
     }

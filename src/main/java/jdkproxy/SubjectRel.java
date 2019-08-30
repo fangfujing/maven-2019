@@ -27,5 +27,6 @@ public class SubjectRel implements Subject {
     @Override
     public void test(){
 
+        System.out.println("test()...");
     }
 }
