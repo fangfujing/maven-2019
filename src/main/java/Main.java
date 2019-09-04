@@ -12,7 +12,7 @@ public class Main {
             }
         }).start();
 
-        System.out.println("KKKK---");
+        System.out.println("---");
 
     }
 }
