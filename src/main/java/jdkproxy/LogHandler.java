@@ -26,6 +26,11 @@ public class LogHandler implements InvocationHandler {
     public Subject getProxy(){
 
         return (Subject) Proxy.newProxyInstance(target.getClass().getClassLoader(),
-                target.getClass().getInterfaces(), this::invoke);
+                target.getClass().getInterfaces(), new InvocationHandler() {
+                    @Override
+                    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                        return LogHandler.this.invoke(proxy, method, args);
+                    }
+                });
     }
 }
