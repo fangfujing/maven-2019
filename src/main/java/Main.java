@@ -11,5 +11,8 @@ public class Main {
                 name.equals("");
             }
         }).start();
+
+        System.out.println("---");
+
     }
 }
