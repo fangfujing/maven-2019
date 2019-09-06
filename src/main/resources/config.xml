@@ -9,10 +9,11 @@
 
     <!-- 注解扫描 -->
 
-    <context:component-scan base-package="spring.strategy"/>
+    <!--<context:component-scan base-package="spring.strategy"/>-->
+    <context:component-scan base-package="spring.lifecycle"/>
 
     <beans>
-        <bean id="stu" class="hashmap.Stu">
+        <bean id="a" class="spring.lifecycle.A" init-method="initA">
         </bean>
 
     </beans>

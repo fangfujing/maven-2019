@@ -1,10 +1,12 @@
 package spring.strategy;
 
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Component;
 
 @Component
 @CheckApplyType(value = SysCodeEnum.GT)
-public class GtCheckApplyDetailImpl extends AbstractCheckApplyDetail {
+public class GtCheckApplyDetailImpl extends AbstractCheckApplyDetail implements BeanPostProcessor {
 
     @Override
     public boolean checkIsMutalRole() {
@@ -13,4 +15,15 @@ public class GtCheckApplyDetailImpl extends AbstractCheckApplyDetail {
 
         return super.checkIsMutalRole();
     }
+
+    @Override
+    public Object postProcessAfterInitialization(Object o, String s) throws BeansException {
+        return o;
+    }
+
+    @Override
+    public Object postProcessBeforeInitialization(Object o, String s) throws BeansException {
+        return o;
+    }
+
 }
