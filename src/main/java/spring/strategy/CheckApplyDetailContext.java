@@ -12,11 +12,6 @@ import java.util.Set;
 @Component
 public class CheckApplyDetailContext implements ApplicationContextAware {
 
-    {
-        Class<?>[] interfaces = CheckApplyDetail.class.getInterfaces();
-
-    }
-
     private Map<String, CheckApplyDetail> checkApplyDetailMap = new HashMap<>(20);
 
     public CheckApplyDetail getCheckApplyDetail(String sysCode){
