@@ -2,7 +2,7 @@ package thread;
 
 public class T {
 
-    boolean running = true;
+    boolean running = false;
 
     void m(){
         System.out.println("start...");
