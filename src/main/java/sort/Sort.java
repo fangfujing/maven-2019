@@ -5,7 +5,7 @@ public class Sort {
 
         int [] array = {3, 4, 6 , 7, 5, 3, 2};
 
-        //冒泡
+        //冒泡1
         bubbleSort(array);
 
         //插入排序
