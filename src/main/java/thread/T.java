@@ -15,7 +15,8 @@ public class T {
     }
 
     public static void main(String[] args) {
-		 System.out.println("e...12");
+		 System.out.println("end...12");
+        System.out.println("8888");
     }
 
 }
